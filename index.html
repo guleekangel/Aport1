@@ -1,332 +1,1289 @@
-<!doctype html>
-<html lang="en">
-<head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="theme-color" content="#f7f7f5">
-  <meta name="description" content="Angel Ha — multidisciplinary design manager building products, brands and teams across Europe and Asia.">
-  <title>Angel Ha — Multidisciplinary Design Manager</title>
-  <script>document.documentElement.classList.add('js');</script>
-  <link rel="stylesheet" href="styles.css">
+<!DOCTYPE html><html data-page-node-id="xckIgYKZ2Eg5j95HNRffPG" lang="en"><head data-page-node-id="LOeXYwrUFctgRG56Uq4B5T">
+<script data-page-node-id="QZ5npbLUUxDu8GYO4t3I3L" src="/page/page_comm/inject.js"></script>
+  <meta data-page-node-id="L3GFF702HREV88pLoKFL0f" charset="utf-8">
+  <meta data-page-node-id="nzMaIGzM4bZN6UQL7GdRqK" content="width=device-width, initial-scale=1" name="viewport">
+  <meta data-page-node-id="7F8xswkcrlYV5Tr9j3x3lz" content="#f7f7f5" name="theme-color">
+  <meta data-page-node-id="JbhaqhhbTRzUJIPXHFwze8" content="Angel Ha — multidisciplinary design manager building products, brands and teams across Europe and Asia." name="description">
+  <title data-page-node-id="Wg1IRqQXlk0DhOjy6EprZE" data-pnid-children="qbOlIVzI1gKfEMWQZioFI0">Angel Ha — Multidisciplinary Design Manager</title>
+  <script data-page-node-id="rR0wjbdEyN7yMH6lXduA2p" data-pnid-children="wg6QZVR6k9q2pNE3Luzq25">document.documentElement.classList.add('js');</script>
+  <style data-page-node-id="EfcEAlkic9xk1o2FWcqTKH" data-pnid-children="Inlj9aWir5RrxGYv1PO5xS">
+:root {
+  --paper: #f7f7f5;
+  --ink: #151513;
+  --muted: #73736d;
+  --line: #d8d8d2;
+  --acid: #f2ff57;
+  --header-h: 76px;
+}
+
+* { box-sizing: border-box; }
+
+html {
+  scroll-behavior: smooth;
+  scroll-padding-top: var(--header-h);
+}
+
+body {
+  margin: 0;
+  background: var(--paper);
+  color: var(--ink);
+  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  overflow-x: hidden;
+}
+
+a { color: inherit; text-decoration: none; touch-action: manipulation; }
+
+button { font: inherit; touch-action: manipulation; }
+
+img { display: block; max-width: 100%; }
+
+section { scroll-margin-top: var(--header-h); }
+
+::selection { background: var(--acid); color: var(--ink); }
+
+/* ---------- Header ---------- */
+
+.site-header {
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  height: var(--header-h);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 24px;
+  padding: 0 clamp(20px, 5vw, 72px);
+  background: rgba(247, 247, 245, 0.9);
+  backdrop-filter: saturate(140%) blur(14px);
+  -webkit-backdrop-filter: saturate(140%) blur(14px);
+  border-bottom: 1px solid transparent;
+  transition: border-color 0.3s ease;
+}
+
+.site-header.is-scrolled { border-color: var(--line); }
+
+.brand {
+  font-size: 17px;
+  font-weight: 700;
+  letter-spacing: -0.045em;
+  white-space: nowrap;
+}
+
+.brand span { color: var(--muted); }
+
+.nav {
+  display: flex;
+  align-items: center;
+  gap: clamp(18px, 2.6vw, 38px);
+}
+
+.nav a {
+  position: relative;
+  font-size: 10px;
+  letter-spacing: 0.17em;
+  text-transform: uppercase;
+  opacity: 0.68;
+  transition: opacity 0.25s ease;
+}
+
+.nav a:hover,
+.nav a:focus-visible { opacity: 1; }
+
+.nav a::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  right: 100%;
+  bottom: -6px;
+  height: 1px;
+  background: currentColor;
+  transition: right 0.3s ease;
+}
+
+.nav a:hover::after { right: 0; }
+
+.header-cta {
+  display: inline-flex;
+  align-items: center;
+  gap: 9px;
+  padding: 10px 18px;
+  border: 1px solid var(--ink);
+  border-radius: 999px;
+  font-size: 10px;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  white-space: nowrap;
+  transition: background 0.25s ease, color 0.25s ease;
+}
+
+.header-cta:hover,
+.header-cta:focus-visible {
+  background: var(--ink);
+  color: var(--paper);
+}
+
+.nav-toggle {
+  display: none;
+  flex-direction: column;
+  gap: 5px;
+  padding: 8px 4px;
+  border: 0;
+  background: none;
+  cursor: pointer;
+}
+
+.nav-toggle span {
+  display: block;
+  width: 22px;
+  height: 1.5px;
+  background: var(--ink);
+  transition: transform 0.3s ease, opacity 0.3s ease;
+}
+
+.nav-toggle[aria-expanded="true"] span:first-child { transform: translateY(3.25px) rotate(45deg); }
+.nav-toggle[aria-expanded="true"] span:last-child { transform: translateY(-3.25px) rotate(-45deg); }
+
+/* ---------- Shared ---------- */
+
+.section,
+.impact,
+.contact {
+  padding: clamp(80px, 10vw, 150px) clamp(20px, 5vw, 72px);
+}
+
+.section { max-width: 1600px; margin: 0 auto; }
+
+.section-head { margin-bottom: clamp(48px, 7vw, 96px); }
+
+.section-head--split {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: 24px;
+}
+
+.section-label {
+  display: inline-flex;
+  align-items: center;
+  gap: 11px;
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+}
+
+.tri {
+  display: inline-block;
+  width: 0;
+  height: 0;
+  border-left: 5px solid transparent;
+  border-right: 5px solid transparent;
+  border-top: 7px solid currentColor;
+}
+
+.section-note {
+  margin: 0;
+  max-width: 38ch;
+  font-size: 12px;
+  line-height: 1.5;
+  color: var(--muted);
+  text-align: right;
+}
+
+.pill {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  padding: 12px 20px;
+  border: 1px solid var(--ink);
+  border-radius: 999px;
+  font-size: 10px;
+  font-weight: 600;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  background: transparent;
+  transition: background 0.25s ease, color 0.25s ease, border-color 0.25s ease;
+}
+
+.pill:hover,
+.pill:focus-visible { background: var(--ink); color: var(--paper); }
+
+.pill--light { border-color: #fff; color: #fff; }
+.pill--light:hover,
+.pill--light:focus-visible { background: #fff; color: var(--ink); }
+
+.pill--outline-light { border-color: rgba(255,255,255,0.55); color: #fff; }
+.pill--outline-light:hover,
+.pill--outline-light:focus-visible { background: rgba(255,255,255,0.16); color: #fff; }
+
+.pill--dark { border-color: var(--acid); color: var(--acid); }
+.pill--dark:hover,
+.pill--dark:focus-visible { background: var(--acid); color: var(--ink); }
+
+/* ---------- Hero ---------- */
+
+.hero {
+  position: relative;
+  min-height: calc(100svh - var(--header-h));
+  display: flex;
+  align-items: flex-end;
+  overflow: hidden;
+  background: #c8c9c4;
+  color: #fff;
+}
+
+.hero-media {
+  position: absolute;
+  inset: 0;
+  background:
+    radial-gradient(circle at 62% 34%, rgba(255,255,255,0.72) 0%, rgba(255,255,255,0) 42%),
+    radial-gradient(circle at 28% 72%, rgba(255,255,255,0.32) 0%, rgba(255,255,255,0) 46%),
+    linear-gradient(135deg, #d7d8d3 0%, #bfc1ba 52%, #a5a8a1 100%);
+}
+
+.hero-media::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background-image:
+    linear-gradient(rgba(255,255,255,0.13) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(255,255,255,0.13) 1px, transparent 1px);
+  background-size: 72px 72px;
+  mask-image: linear-gradient(to bottom, transparent 5%, black 90%);
+  -webkit-mask-image: linear-gradient(to bottom, transparent 5%, black 90%);
+}
+
+.hero-media::after {
+  content: "";
+  position: absolute;
+  width: 46vw;
+  height: 46vw;
+  max-width: 680px;
+  max-height: 680px;
+  right: 8%;
+  top: 8%;
+  border: 1px solid rgba(255,255,255,0.28);
+  border-radius: 50%;
+}
+
+.hero-media__img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.hero-media__inner {
+  position: absolute;
+  z-index: 1;
+  top: clamp(104px, 18vh, 180px);
+  right: clamp(20px, 6vw, 90px);
+  padding: 11px 18px;
+  border: 1px solid rgba(21,21,19,0.28);
+  border-radius: 999px;
+  background: rgba(247,247,245,0.42);
+  color: rgba(21,21,19,0.55);
+  font-size: 9px;
+  font-weight: 600;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  white-space: nowrap;
+}
+
+.hero::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(to top, rgba(12,12,11,0.66) 0%, rgba(12,12,11,0.18) 45%, transparent 78%);
+  pointer-events: none;
+}
+
+.hero-content {
+  position: relative;
+  z-index: 2;
+  width: 100%;
+  max-width: 1200px;
+  padding: 72px clamp(20px, 5vw, 72px) clamp(76px, 9vw, 120px);
+}
+
+.eyebrow {
+  margin: 0 0 26px;
+  font-size: 10px;
+  font-weight: 600;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  opacity: 0.86;
+}
+
+.hero h1 {
+  margin: 0 0 28px;
+  max-width: 15ch;
+  font-size: clamp(48px, 7.6vw, 116px);
+  font-weight: 500;
+  line-height: 0.95;
+  letter-spacing: -0.06em;
+}
+
+.hero-sub {
+  max-width: 560px;
+  margin: 0 0 36px;
+  font-size: clamp(15px, 1.4vw, 18px);
+  line-height: 1.55;
+  opacity: 0.92;
+}
+
+.hero-actions { display: flex; flex-wrap: wrap; gap: 12px; }
+
+.hero-scroll {
+  position: absolute;
+  z-index: 2;
+  right: clamp(20px, 5vw, 72px);
+  bottom: clamp(28px, 4vw, 52px);
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-size: 9px;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  opacity: 0.75;
+}
+
+.hero-scroll span { font-size: 14px; }
+
+/* ---------- About ---------- */
+
+.about-grid {
+  display: grid;
+  grid-template-columns: 1.12fr 0.88fr;
+  gap: clamp(40px, 8vw, 130px);
+  align-items: start;
+}
+
+.about-grid h2 {
+  margin: 0;
+  max-width: 16ch;
+  font-size: clamp(32px, 4.5vw, 68px);
+  font-weight: 500;
+  line-height: 1.05;
+  letter-spacing: -0.045em;
+}
+
+.about-copy p {
+  margin: 0 0 20px;
+  max-width: 54ch;
+  font-size: 15px;
+  line-height: 1.72;
+  color: #41413c;
+}
+
+.about-copy .pill { margin-top: 12px; }
+
+.about-facts {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 1px;
+  margin: clamp(56px, 7vw, 96px) 0 0;
+  padding: 0;
+  list-style: none;
+  background: var(--line);
+  border: 1px solid var(--line);
+}
+
+.about-facts li {
+  padding: clamp(22px, 2.6vw, 36px);
+  background: var(--paper);
+}
+
+.about-facts strong {
+  display: block;
+  margin-bottom: 10px;
+  font-size: clamp(28px, 3.4vw, 46px);
+  font-weight: 500;
+  line-height: 1;
+  letter-spacing: -0.055em;
+}
+
+.about-facts span {
+  font-size: 10px;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--muted);
+}
+
+/* ---------- Expertise ---------- */
+
+.service-row {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: clamp(32px, 6vw, 100px);
+  align-items: start;
+  padding: clamp(36px, 5vw, 66px) 0;
+  border-top: 1px solid var(--line);
+}
+
+.service-row:last-child { border-bottom: 1px solid var(--line); }
+
+.service-index {
+  display: block;
+  margin-bottom: 18px;
+  font-size: 10px;
+  letter-spacing: 0.16em;
+  color: var(--muted);
+}
+
+.service-info h3 {
+  margin: 0 0 16px;
+  font-size: clamp(26px, 3.2vw, 44px);
+  font-weight: 500;
+  line-height: 1.08;
+  letter-spacing: -0.04em;
+}
+
+.service-info p {
+  margin: 0 0 26px;
+  max-width: 46ch;
+  font-size: 14px;
+  line-height: 1.65;
+  color: #464640;
+}
+
+.tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.tags li {
+  padding: 8px 14px;
+  border: 1px solid #cbcbc5;
+  border-radius: 999px;
+  font-size: 10.5px;
+  line-height: 1.2;
+  color: #4e4e49;
+}
+
+/* Image slots — replace the whole .image-slot div with your own <img>. */
+.image-slot {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  aspect-ratio: 4 / 3;
+  overflow: hidden;
+  background: #e6e6e1;
+  border: 1px solid #d4d4ce;
+}
+
+.image-slot::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background-image:
+    linear-gradient(45deg, rgba(0,0,0,0.03) 25%, transparent 25%, transparent 75%, rgba(0,0,0,0.03) 75%),
+    linear-gradient(45deg, rgba(0,0,0,0.03) 25%, transparent 25%, transparent 75%, rgba(0,0,0,0.03) 75%);
+  background-size: 24px 24px;
+  background-position: 0 0, 12px 12px;
+}
+
+.image-slot span {
+  position: relative;
+  z-index: 1;
+  padding: 10px 16px;
+  border: 1px solid rgba(21,21,19,0.2);
+  border-radius: 999px;
+  background: rgba(247,247,245,0.78);
+  color: #6c6c66;
+  font-size: 9px;
+  font-weight: 600;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  white-space: nowrap;
+}
+
+.image-slot--dark { background: #1f1f1d; border-color: #1f1f1d; }
+.image-slot--dark span { color: #f3f3ee; border-color: rgba(255,255,255,0.35); background: rgba(0,0,0,0.28); }
+
+.image-slot--acid { background: var(--acid); border-color: #dfe94b; }
+.image-slot--acid span { color: var(--ink); border-color: rgba(21,21,19,0.4); background: rgba(255,255,255,0.55); }
+
+.image-slot--mid { background: #cbd0c8; }
+
+.image-slot img {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+/* ---------- Selected work ---------- */
+
+.work-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: clamp(20px, 3vw, 44px);
+}
+
+.work-card { border-top: 1px solid var(--line); padding-top: 20px; }
+
+.work-card .image-slot { aspect-ratio: 1 / 1.06; }
+
+.work-meta {
+  display: grid;
+  grid-template-columns: auto 1fr auto;
+  gap: 16px;
+  align-items: start;
+  padding-top: 18px;
+}
+
+.work-no {
+  padding-top: 3px;
+  font-size: 10px;
+  letter-spacing: 0.12em;
+  color: var(--muted);
+}
+
+.work-meta h3 {
+  margin: 0 0 6px;
+  font-size: 17px;
+  font-weight: 500;
+  letter-spacing: -0.02em;
+}
+
+.work-meta p {
+  margin: 0;
+  font-size: 11.5px;
+  line-height: 1.5;
+  color: var(--muted);
+}
+
+.work-arrow { font-size: 15px; opacity: 0.45; }
+
+/* ---------- Impact ---------- */
+
+.impact {
+  background: var(--acid);
+  color: var(--ink);
+}
+
+.impact .section-head { margin-bottom: clamp(60px, 8vw, 110px); }
+
+.stats {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  border-top: 1px solid rgba(21,21,19,0.38);
+}
+
+.stat {
+  padding: clamp(28px, 3.4vw, 46px) clamp(16px, 2vw, 30px) 4px;
+  border-left: 1px solid rgba(21,21,19,0.38);
+}
+
+.stat:first-child { padding-left: 0; border-left: 0; }
+
+.stat p {
+  margin: 0 0 22px;
+  font-size: clamp(48px, 7vw, 104px);
+  font-weight: 500;
+  line-height: 1;
+  letter-spacing: -0.075em;
+}
+
+.stat span {
+  display: block;
+  max-width: 19ch;
+  font-size: 11.5px;
+  line-height: 1.5;
+}
+
+/* ---------- Journey ---------- */
+
+.timeline { border-top: 1px solid var(--line); }
+
+.timeline-item {
+  display: grid;
+  grid-template-columns: 180px 1fr;
+  gap: clamp(24px, 5vw, 80px);
+  padding: clamp(34px, 4.2vw, 60px) 0;
+  border-bottom: 1px solid var(--line);
+}
+
+.timeline-date {
+  padding-top: 8px;
+  font-size: 10px;
+  font-weight: 600;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  color: var(--muted);
+}
+
+.timeline-item h3 {
+  margin: 0 0 8px;
+  font-size: clamp(22px, 2.6vw, 34px);
+  font-weight: 500;
+  line-height: 1.12;
+  letter-spacing: -0.035em;
+}
+
+.timeline-org {
+  margin: 0 0 20px;
+  font-size: 12px;
+  color: var(--muted);
+}
+
+.timeline-item ul {
+  margin: 0;
+  padding-left: 18px;
+  max-width: 78ch;
+  font-size: 14px;
+  line-height: 1.75;
+  color: #41413c;
+}
+
+.timeline-item li + li { margin-top: 7px; }
+
+/* ---------- Toolkit ---------- */
+
+.tools-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: clamp(26px, 4vw, 64px);
+  padding-top: clamp(32px, 4vw, 52px);
+  border-top: 1px solid var(--line);
+}
+
+.tools-grid h3 {
+  margin: 0 0 18px;
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: var(--muted);
+}
+
+.tools-grid p {
+  margin: 0;
+  font-size: 15px;
+  line-height: 1.7;
+}
+
+/* ---------- Contact ---------- */
+
+.contact {
+  background: #151513;
+  color: #f6f6f1;
+}
+
+.contact .section-label { color: var(--acid); }
+
+.contact h2 {
+  margin: 38px 0 22px;
+  max-width: 14ch;
+  font-size: clamp(44px, 7.8vw, 112px);
+  font-weight: 500;
+  line-height: 0.97;
+  letter-spacing: -0.06em;
+}
+
+.contact p {
+  max-width: 48ch;
+  margin: 0 0 46px;
+  font-size: 15px;
+  line-height: 1.65;
+  opacity: 0.74;
+}
+
+.contact-links {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 22px 52px;
+  margin-bottom: 48px;
+}
+
+.contact-links a {
+  display: inline-flex;
+  align-items: center;
+  gap: 12px;
+  padding-bottom: 7px;
+  border-bottom: 1px solid rgba(255,255,255,0.32);
+  font-size: clamp(18px, 2vw, 26px);
+  letter-spacing: -0.02em;
+  transition: color 0.25s ease, border-color 0.25s ease;
+}
+
+.contact-links a:hover,
+.contact-links a:focus-visible { color: var(--acid); border-color: var(--acid); }
+
+footer {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 20px;
+  padding: 24px clamp(20px, 5vw, 72px);
+  background: #151513;
+  border-top: 1px solid rgba(255,255,255,0.12);
+  color: rgba(246,246,241,0.55);
+  font-size: 9.5px;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+}
+
+/* ---------- Reveal ---------- */
+
+.js .reveal {
+  opacity: 0;
+  transform: translateY(26px);
+  transition: opacity 0.75s ease, transform 0.75s cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+.js .reveal.is-visible { opacity: 1; transform: none; }
+
+/* ---------- Responsive ---------- */
+
+@media (max-width: 1000px) {
+  .work-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  .stats { grid-template-columns: repeat(2, 1fr); }
+  .stat:nth-child(3) { padding-left: 0; border-left: 0; }
+  .stat:nth-child(n+3) { border-top: 1px solid rgba(21,21,19,0.38); }
+}
+
+@media (max-width: 860px) {
+  .site-header { --header-h: 68px; }
+
+  .nav {
+    position: fixed;
+    top: var(--header-h);
+    left: 0;
+    right: 0;
+    flex-direction: column;
+    align-items: stretch;
+    gap: 0;
+    padding: 12px clamp(20px, 5vw, 72px) 24px;
+    background: var(--paper);
+    border-bottom: 1px solid var(--line);
+    transform: translateY(-120%);
+    opacity: 0;
+    pointer-events: none;
+    transition: transform 0.32s ease, opacity 0.32s ease;
+  }
+
+  .nav.is-open { transform: none; opacity: 1; pointer-events: auto; }
+
+  .nav a {
+    padding: 17px 0;
+    border-bottom: 1px solid var(--line);
+    font-size: 12px;
+    opacity: 1;
+  }
+
+  .nav a::after { display: none; }
+
+  .nav-toggle {
+    display: flex;
+    width: 44px;
+    height: 44px;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .about-grid,
+  .service-row,
+  .tools-grid { grid-template-columns: 1fr; }
+
+  .about-grid { gap: 36px; }
+
+  .about-grid h2 { max-width: 18ch; }
+
+  .service-row { gap: 30px; }
+
+  .timeline-item { grid-template-columns: 1fr; gap: 12px; }
+
+  .timeline-date { padding-top: 0; }
+
+  .section-head--split { flex-direction: column; align-items: flex-start; }
+
+  .section-note { text-align: left; }
+}
+
+@media (max-width: 600px) {
+  .header-cta { display: none; }
+
+  .nav {
+    box-shadow: 0 24px 40px rgba(21, 21, 19, 0.08);
+  }
+
+  .nav a { padding: 17px 0; }
+
+  .nav-toggle {
+    width: 44px;
+    height: 44px;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .section,
+  .impact,
+  .contact { padding: 64px 20px; }
+
+  .hero {
+    min-height: min(760px, calc(100svh - 68px));
+  }
+
+  .hero-content { padding-bottom: 64px; }
+
+  .hero h1 { font-size: clamp(34px, 9.5vw, 56px); max-width: 100%; }
+
+  .eyebrow { font-size: 8.5px; letter-spacing: 0.14em; }
+
+  .hero-sub { max-width: 100%; font-size: 14px; }
+
+  .hero-actions { gap: 10px; }
+
+  .pill { min-height: 44px; padding: 12px 18px; font-size: 9px; }
+
+  .hero-media__inner { display: none; }
+
+  .hero-scroll { display: none; }
+
+  .work-grid,
+  .stats { grid-template-columns: 1fr; }
+
+  .stat,
+  .stat:nth-child(3) {
+    padding-left: 0;
+    border-left: 0;
+    border-top: 1px solid rgba(21,21,19,0.38);
+  }
+
+  .stat:first-child { border-top: 0; }
+
+  .about-facts { grid-template-columns: repeat(2, 1fr); }
+
+  .contact-links { flex-direction: column; gap: 20px; }
+
+  .contact-links a { min-height: 44px; align-items: center; }
+
+  footer { flex-direction: column; align-items: flex-start; gap: 8px; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html { scroll-behavior: auto; }
+
+  .js .reveal { opacity: 1; transform: none; transition: none; }
+
+  *, *::before, *::after { animation-duration: 0.01ms !important; transition-duration: 0.01ms !important; }
+}
+
+
+  /* CV overlay */
+  .cv-overlay { position: fixed; inset: 0; z-index: 1000; background: rgba(12,12,11,0.82); display: flex; flex-direction: column; padding: clamp(12px, 4vw, 48px); }
+  .cv-overlay[hidden] { display: none; }
+  .cv-overlay__bar { display: flex; justify-content: space-between; align-items: center; color: var(--acid); font-size: 10px; letter-spacing: 0.2em; text-transform: uppercase; padding-bottom: 14px; }
+  .cv-overlay__bar button { border: 1px solid var(--acid); color: var(--acid); background: none; border-radius: 999px; padding: 10px 16px; cursor: pointer; letter-spacing: 0.15em; text-transform: uppercase; font-size: 10px; }
+  .cv-overlay iframe { flex: 1; width: 100%; border: 0; border-radius: 4px; background: var(--paper); }
+</style>
 </head>
-<body id="top">
+<body data-page-node-id="3pyVKvOjATckUlci0awzG5" id="top">
 
-  <header class="site-header" id="site-header">
-    <a class="brand" href="#top">ANGEL HA<span>.</span></a>
+  <header data-page-node-id="ziX2aW7K4ofXqqs42wnXCr" class="site-header" id="site-header">
+    <a data-page-node-id="AyjdgUmSs2a1yXw1Hgdx0o" class="brand" href="#top"><!--pnid:Z4l7zWXYLvXFqq4qiExY71-->ANGEL HA<span data-page-node-id="NgUCIPchFowqd60GNYkcJ9"><!--pnid:bdoYksC3zzabuVsCN3nsTc-->.</span></a>
 
-    <nav class="nav" id="site-nav" aria-label="Main navigation">
-      <a href="#about">About</a>
-      <a href="#expertise">Expertise</a>
-      <a href="#work">Work</a>
-      <a href="#journey">Journey</a>
-      <a href="#contact">Contact</a>
+    <nav data-page-node-id="7yTrqBep6wXf16nK6hKaXH" aria-label="Main navigation" class="nav" id="site-nav">
+      <a data-page-node-id="rQF119FFxkXBvtIjTEaOhi" href="#about"><!--pnid:FpR8a6TSQej61u0VKzGRa3-->About</a>
+      <a data-page-node-id="sgGp2apu37OusHI3xsSwxQ" href="#expertise"><!--pnid:Lmf4wmJLvvbHAzUpSIFDRM-->Expertise</a>
+      <a data-page-node-id="lXuwVLzZ6GRLsCP4HeQoao" href="#work"><!--pnid:odiwbLVlKPcHWJ9F3ESvsl-->Work</a>
+      <a data-page-node-id="tfmRhK3vRxJI0d1IcfG68d" href="#journey"><!--pnid:HpyvV7xoeMtiUO4cv0gCTp-->Journey</a>
+      <a data-page-node-id="FJzUwN08nRNS5oc2Ad8se8" href="#contact"><!--pnid:vipWTz3WQ5smJxY7fHd1uB-->Contact</a>
     </nav>
 
-    <a class="header-cta" href="mailto:aymha8@gmail.com">Let's talk <span aria-hidden="true">↗</span></a>
+    <a data-page-node-id="UlABA60vzInoO1d2NpcdbM" class="header-cta" href="mailto:aymha8@gmail.com"><!--pnid:nTCo6CPXBuvF83ZHit8lbl-->Let&#39;s talk <span data-page-node-id="8bKVt51ERljGCcEuP4XwVC" aria-hidden="true"><!--pnid:LeqEzTsTf7nye93KI9exzX-->↗</span></a>
 
-    <button class="nav-toggle" id="nav-toggle" type="button" aria-label="Open navigation" aria-controls="site-nav" aria-expanded="false">
-      <span></span><span></span>
+    <button data-page-node-id="ZVGv24TSKoBleEUJoBy3aj" aria-controls="site-nav" aria-expanded="false" aria-label="Open navigation" class="nav-toggle" id="nav-toggle" type="button">
+      <span data-page-node-id="yRjePUJxs8ryU1my0ISQSu"></span><span data-page-node-id="3Ky8ShU4EyEezS4mj7U9My"></span>
     </button>
   </header>
 
-  <main>
+  <main data-page-node-id="ZC20fCSueTz8QqXBxPaZXV">
 
-    <!-- HERO
+    <!--pnid:u9Xy6UhtHM7jZTa09tpsxo--><!-- HERO
          Replace .hero-media with your own image when ready:
          <img src="assets/hero.jpg" alt="" class="hero-media__img">
     -->
-    <section class="hero" id="hero">
-      <div class="hero-media" aria-hidden="true">
-        <div class="hero-media__inner">Hero image / replace with your photography</div>
+    <section data-page-node-id="guGEGy8XfA8XUWF2L3NaOZ" class="hero" id="hero">
+      <div data-page-node-id="LvevLcRkIdvkWL6UZPMzK3" aria-hidden="true" class="hero-media">
+        <div data-page-node-id="a2Kn31cNLnT7dBGLVSqBrF" class="hero-media__inner"><!--pnid:kvQ0LKd9WqsGZYlS9iO0ZX-->Hero image / replace with your photography</div>
       </div>
 
-      <div class="hero-content">
-        <p class="eyebrow">Multidisciplinary Design Manager · Hong Kong / UK</p>
-        <h1>Design leadership,<br>from concept to consumer.</h1>
-        <p class="hero-sub">I'm Angel Ha — building products, brands and teams across Europe and Asia with equal parts strategy, craft and curiosity.</p>
-        <div class="hero-actions">
-          <a class="pill pill--light" href="#work">See selected work <span aria-hidden="true">↗</span></a>
-          <a class="pill pill--outline-light" href="cv.html">View CV <span aria-hidden="true">↗</span></a>
+      <div data-page-node-id="gQrrXL8ya7fGgSzWd31tYM" class="hero-content">
+        <p data-page-node-id="POdtDz5SWruQ6qJkrJxE9t" class="eyebrow" style="white-space:pre-wrap"><!--pnid:y4rVwj37JaDoGawPSjN4gI-->MULTIDISCIPLINARY DESIGN MANAGER · HONG KONG / CHINA/ UK</p>
+        <h1 data-page-node-id="9A6SHbAVhKXDm1muNPVvK6"><!--pnid:of9EhfpWESva3EQl4G7kOv-->Design leadership,<br data-page-node-id="Ojz1NbAunR5F1SzeINVThf"><!--pnid:2cjOfVZKtLBdyglZZqfzwg-->from concept to consumer.</h1>
+        <p data-page-node-id="sra5LXohxc4bcHMDSbpqHk" class="hero-sub"><!--pnid:8Q0G0fw2fmgeXfPVkXwC6z-->I&#39;m Angel Ha — building products, brands and teams across Europe and Asia with equal parts strategy, craft and curiosity.</p>
+        <div data-page-node-id="tpyG4JFVWA6J6KOwozxUaN" class="hero-actions">
+          <a data-page-node-id="TjBhOuUxCm6KHABG3BWgpT" class="pill pill--light" href="#work"><!--pnid:kANKaxATXanCMKjYbjmcP4-->See selected work <span data-page-node-id="owhg7mI3GNTf2q7jLyM1dz" aria-hidden="true"><!--pnid:k8V1DMUqwiqTrIjjswTcGD-->↗</span></a>
+          <a data-page-node-id="xuEB04MaQPmpz7RslmbNYg" class="pill pill--outline-light" data-cv-open href="#cv"><!--pnid:58f6fiI5oP4t4rzgs4o654-->View CV <span data-page-node-id="1EyVWHK1JhuEHmSFkHPLBY" aria-hidden="true"><!--pnid:iQogKhDhtNrM7e6MmfKJsC-->↗</span></a>
         </div>
       </div>
 
-      <div class="hero-scroll" aria-hidden="true">Scroll <span>↓</span></div>
+      <div data-page-node-id="UMvljZosG1rOpzoKzZZ74R" aria-hidden="true" class="hero-scroll"><!--pnid:n23UTl4kjxkU3XNF6c1rbg-->Scroll <span data-page-node-id="hNZOgY09gKlqUOAJ5gT4R5"><!--pnid:0yXGtu3yhydoCvCfGwC7no-->↓</span></div>
     </section>
 
-    <!-- ABOUT -->
-    <section class="section section--about reveal" id="about">
-      <div class="section-head">
-        <span class="section-label"><i class="tri" aria-hidden="true"></i> Who I am</span>
+    <!--pnid:IMfRXkbAsq3sktxMQihQnm--><!-- ABOUT -->
+    <section data-page-node-id="WZluSl7fFXCxfgWOt3ZFV5" class="section section--about reveal" id="about">
+      <div data-page-node-id="eulWtBX1qEp1NxEUQwUIum" class="section-head">
+        <span data-page-node-id="rAZpCpIQPb5zV1DNJbobjA" class="section-label"><i data-page-node-id="Sn3UU1DEJWjynyzQGoVWoX" aria-hidden="true" class="tri"></i><!--pnid:NMQ1jFGf25lbRtNh8m8QbB--> Who I am</span>
       </div>
 
-      <div class="about-grid">
-        <h2>I turn market intelligence into products, systems and teams that perform.</h2>
+      <div data-page-node-id="14Vie6L3ZxxtlgLneffk5H" class="about-grid">
+        <h2 data-page-node-id="3MbwzvgjF23pX7DCz9vE5P"><!--pnid:5ZiWmKGBYpLDRh3FBzgsYI-->I turn market intelligence into products, systems and teams that perform.</h2>
 
-        <div class="about-copy">
-          <p>Seven years in managerial roles have taught me that good design is only half the work. The other half is clarity: turning a stakeholder's vision into objectives, a realistic plan and a team that knows exactly what to do next.</p>
-          <p>Trained at Central St. Martins and later in UI &amp; UX design, I move comfortably between graphics, industrial design, interiors, photography and digital products — and I communicate fluently in English, Cantonese and Mandarin, with working German.</p>
-          <a class="pill" href="#journey">More about my journey <span aria-hidden="true">↗</span></a>
+        <div data-page-node-id="lr4dtNERCSAwWhURJa4w1b" class="about-copy">
+          <p data-page-node-id="fJCtHpnikgchJLtOHMmUgO"><!--pnid:9usj5nDIpM8Pt3MYFHDnsY-->Seven years in managerial roles have taught me that good design is only half the work. The other half is clarity: turning a stakeholder&#39;s vision into objectives, a realistic plan and a team that knows exactly what to do next.</p>
+          <p data-page-node-id="fHvibNJ6yxaJYbTcg7o1DH"><!--pnid:nLEhumguzJTgcN0XOfw3Sn-->Trained at Central St. Martins and later in UI &amp; UX design, I move comfortably between graphics, industrial design, interiors, photography and digital products — and I communicate fluently in English, Cantonese and Mandarin, with working German.</p>
+          <a data-page-node-id="SfROEpQIFYfVLlRGK9BAXa" class="pill" href="#journey"><!--pnid:40BdRfEM4OUcUJnMTyS69E-->More about my journey <span data-page-node-id="NE6Dub4xLAHymLFkbN3MRT" aria-hidden="true"><!--pnid:NHO7TPHngyBby1v9AgWFrB-->↗</span></a>
         </div>
       </div>
 
-      <ul class="about-facts">
-        <li><strong>7+</strong><span>Years in management</span></li>
-        <li><strong>1st</strong><span>Class honours, UAL</span></li>
-        <li><strong>MA</strong><span>UI &amp; UX Design</span></li>
-        <li><strong>5</strong><span>Countries lived &amp; worked</span></li>
+      <ul data-page-node-id="n0In3kvaeAK6pAhvOyeRuj" class="about-facts">
+        <li data-page-node-id="GbAMaGz4l296kl8nznrALG"><strong data-page-node-id="9yXQfhkotDlKwZoUnGH9y1"><!--pnid:OfMZRz5cpuZ9YdvNPuJJTW-->7+</strong><span data-page-node-id="y14f4BsvTMQyPbU8GFnrUh"><!--pnid:pqLG1yh3hTaLQEbpiNLVlO-->Years in management</span></li>
+        <li data-page-node-id="aUG0JS8cEMccVQTPClwsmJ"><strong data-page-node-id="AbKMVJnuSPJjVaewzFWsWw"><!--pnid:poTyb5DE1f0BG2Tns19u0W-->1st</strong><span data-page-node-id="rISvZVtIQOpFaJhiIeo6sk"><!--pnid:cYIoaOxhr9F7GkbPI2BXnp-->Class honours, UAL</span></li>
+        <li data-page-node-id="PhOdExfXFQBycj6QEMKKsH"><strong data-page-node-id="bvMldWoEctQAODHQ9NEx7z"><!--pnid:wt7OGbt34EZij64xsLFGg1-->MA</strong><span data-page-node-id="iN3qqnYOmFSefaGb6lFzMa"><!--pnid:VSNuCe4hnejPPGWEiXe2vO-->UI &amp; UX Design</span></li>
+        <li data-page-node-id="pd2go4JkHnijiEb5M9nk6A"><strong data-page-node-id="126Uu0WLFcokkgZH5iLydF"><!--pnid:hPi0p0ToZoizdW7bxgbAf3-->5</strong><span data-page-node-id="b0BIezBROItuGN0ZdLDrLv"><!--pnid:Mhytoe1avD8j0NU4Da5UgZ-->Countries lived &amp; worked</span></li>
       </ul>
     </section>
 
-    <!-- EXPERTISE -->
-    <section class="section reveal" id="expertise">
-      <div class="section-head">
-        <span class="section-label"><i class="tri" aria-hidden="true"></i> What I do</span>
+    <!--pnid:4nwtxfMY5rbc26cB7h1lBW--><!-- EXPERTISE -->
+    <section data-page-node-id="vZMGFuVLUv4ZDiHe3ysReJ" class="section reveal" id="expertise">
+      <div data-page-node-id="mL2m1qIyTJXEfVB2Brk5Vt" class="section-head">
+        <span data-page-node-id="E0IGDsvuFo7SjctCXUTFjW" class="section-label"><i data-page-node-id="H8FnRMh6m0fJG39Hn0Rpqa" aria-hidden="true" class="tri"></i><!--pnid:fGYPYqx8Us4MiaUCMBZInr--> What I do</span>
       </div>
 
-      <div class="service-list">
-        <article class="service-row">
-          <div class="service-info">
-            <span class="service-index">01/</span>
-            <h3>Product &amp; Industrial Design</h3>
-            <p>From market insight and 3D CAD to prototyping, sampling and production — with one eye on the customer and one on the factory floor.</p>
-            <ul class="tags">
-              <li>Product Strategy</li><li>3D CAD</li><li>Prototyping</li><li>Manufacturing Liaison</li>
+      <div data-page-node-id="Hsxe18Ud6jD8ZufdRUtp7i" class="service-list">
+        <article data-page-node-id="yxrw0LCCuXlJCXYNSYljBx" class="service-row">
+          <div data-page-node-id="SnZS7SiIrcTsGQBgH7oNCJ" class="service-info">
+            <span data-page-node-id="Pvh2NhNWnfgPQ3TynZDpKY" class="service-index"><!--pnid:Nx4v461rBNLW6SvbdnpWwa-->01/</span>
+            <h3 data-page-node-id="D0t9rMoS7Xvgh0zfc8TUJP"><!--pnid:ltLdxDnqkjDBcYaoHONR0q-->Product &amp; Industrial Design</h3>
+            <p data-page-node-id="SOzV6PM5Rij6ybYyzsxrjb"><!--pnid:VINw2zKFdWKgL32nZmVuTj-->From market insight and 3D CAD to prototyping, sampling and production — with one eye on the customer and one on the factory floor.</p>
+            <ul data-page-node-id="urZU0KnpcPgNEcUHdDFTXN" class="tags">
+              <li data-page-node-id="q5oxXIwnRPWPdbBK8ZLRFf"><!--pnid:Qsw6qJ05cnfj3Wv3P94gZC-->Product Strategy</li><li data-page-node-id="Xgz3epPOjCUQyS7GU19r2S"><!--pnid:UlQr3bgxKrjXXhspYVBS5o-->3D CAD</li><li data-page-node-id="htmYGM3wB4Z1hekc9pCGuo"><!--pnid:i99NDxVKhcFp47G4QeuAI9-->Prototyping</li><li data-page-node-id="rUTuFYi9mcDDKLjz8J1fiv"><!--pnid:zLBgyZ8XMusM2PI1PU4R0q-->Manufacturing Liaison</li>
             </ul>
           </div>
-          <!-- Replace with your image: <img src="assets/expertise-01.jpg" alt="Product design work"> -->
-          <div class="image-slot image-slot--mid"><span>Image slot 01</span></div>
+          <!--pnid:yRHLFlecgS34owL8OrjRaE--><!-- Replace with your image: <img src="assets/expertise-01.jpg" alt="Product design work"> -->
+          <div data-page-node-id="AiP6XBsqwhw3SEZoq86aga" class="image-slot image-slot--mid"><span data-page-node-id="99WOHcO23RZK2bH44OElUo"><!--pnid:vhXv9dwp7CTfLoQEkK4GkU-->Image slot 01</span></div>
         </article>
 
-        <article class="service-row">
-          <div class="service-info">
-            <span class="service-index">02/</span>
-            <h3>Brand &amp; Graphic Systems</h3>
-            <p>Packaging, POSM, catalogues and campaign assets that stay consistent across markets, languages and retail environments.</p>
-            <ul class="tags">
-              <li>Packaging</li><li>POSM</li><li>Art Direction</li><li>Campaign Collateral</li>
+        <article data-page-node-id="Men1c3DlmbGXQgWcpn7ajt" class="service-row">
+          <div data-page-node-id="YAB07xk9HnieywjS4w55SJ" class="service-info">
+            <span data-page-node-id="upSb622A2NVhOLuZ8t6V6P" class="service-index"><!--pnid:0m7lStbTJsBoAmWtwb7xz8-->02/</span>
+            <h3 data-page-node-id="x05tvSLHQNj6N3v9eskc0c"><!--pnid:qO15XYIWEqnSlXGmiv7HCS-->Brand &amp; Graphic Systems</h3>
+            <p data-page-node-id="3layHnHK4khg1bIUpJ2Nry"><!--pnid:vEXpYTbg2mp9cW0Sa9Uy41-->Packaging, POSM, catalogues and campaign assets that stay consistent across markets, languages and retail environments.</p>
+            <ul data-page-node-id="2zsB3JGJim792KrR8PwFGl" class="tags">
+              <li data-page-node-id="Jt2tBETRucWWtbxqt2M2Se"><!--pnid:lSncu14TXV2zgdBVVKIgZi-->Packaging</li><li data-page-node-id="myo2PupC17fqSnRppsGGOz"><!--pnid:ssgeRZ4LzKT3HbvRVF0KIJ-->POSM</li><li data-page-node-id="RCI0QzZ59gcQ29IKvdSFPW"><!--pnid:PRBPFEeMze9hUeyXPjmpk8-->Art Direction</li><li data-page-node-id="vNAeosnko33jWoN6emE84r"><!--pnid:jP7UsLGRBa6uJ8hU2jC9zI-->Campaign Collateral</li>
             </ul>
           </div>
-          <div class="image-slot image-slot--acid"><span>Image slot 02</span></div>
+          <div data-page-node-id="uVvp3dAQlH9lmLR510Yxps" class="image-slot image-slot--acid"><span data-page-node-id="E4SUZpIfRvUxnMz4YzBcBi"><!--pnid:gBVChXhCI2fmV97kV4kR7G-->Image slot 02</span></div>
         </article>
 
-        <article class="service-row">
-          <div class="service-info">
-            <span class="service-index">03/</span>
-            <h3>UI &amp; UX Design</h3>
-            <p>Digital experiences shaped by journey mapping, testing and a working knowledge of how real people actually behave.</p>
-            <ul class="tags">
-              <li>Journey Mapping</li><li>Wireframing</li><li>UI Systems</li><li>Usability Testing</li>
+        <article data-page-node-id="IIJBHWjy1zwrlgQQVa9oFG" class="service-row">
+          <div data-page-node-id="uDk89DtbaaArahEWWYQnWr" class="service-info">
+            <span data-page-node-id="kCmdI5lHn8Cp5zuLXsRwwN" class="service-index"><!--pnid:45830ldhAqygjp11rB3Aq6-->03/</span>
+            <h3 data-page-node-id="VQj4M7C29gAePAibZJwgfp"><!--pnid:smtJL2MjJywJ81Y4n3Zp1p-->UI &amp; UX Design</h3>
+            <p data-page-node-id="oguEXHl4u0nTMlFZIUOgwS"><!--pnid:R2JSr8ZBhuEIZ4Q2qf5HhP-->Digital experiences shaped by journey mapping, testing and a working knowledge of how real people actually behave.</p>
+            <ul data-page-node-id="vyJu71X95AIfzRsmJJHbay" class="tags">
+              <li data-page-node-id="3u6eOn0PKV43T1f8OrZTNn"><!--pnid:fvBGBMmBFCmHKW24ggG3kq-->Journey Mapping</li><li data-page-node-id="FObff3gQdGkTH3c1VKQIZg"><!--pnid:DTEvdn8CweBASkSPwmUsUL-->Wireframing</li><li data-page-node-id="9fKpATJcWsZkMClIgCokVQ"><!--pnid:TSFYm5zG2Rw0Gf6Z2NivOa-->UI Systems</li><li data-page-node-id="xaz3ODYxfANP6m6gs4iIXp"><!--pnid:4YKrXGuv81DJ8N6qnhHMwJ-->Usability Testing</li>
             </ul>
           </div>
-          <div class="image-slot image-slot--dark"><span>Image slot 03</span></div>
+          <div data-page-node-id="eb2gIChQWM5T7gHdPvulin" class="image-slot image-slot--dark"><span data-page-node-id="8rz9VqQV5g4CjwLFiiinGL"><!--pnid:bzz71n6kr1e1QxBlhGFWG4-->Image slot 03</span></div>
         </article>
 
-        <article class="service-row">
-          <div class="service-info">
-            <span class="service-index">04/</span>
-            <h3>Photography &amp; Visual Merchandising</h3>
-            <p>Image-making and retail environments that give products a point of view — not just a place on a shelf.</p>
-            <ul class="tags">
-              <li>Studio Photography</li><li>Retail Space</li><li>VM Strategy</li><li>Styling</li>
+        <article data-page-node-id="ZtDPkkqLsPXoAN2fbZLMER" class="service-row">
+          <div data-page-node-id="C6kngvCu3peuPR4kZyqb23" class="service-info">
+            <span data-page-node-id="qW3J6qSHT35z9B3uXrfuLS" class="service-index"><!--pnid:OEBPF6xoFBOP3zgw6KSzel-->04/</span>
+            <h3 data-page-node-id="1U4ZMEzIx0rOT8ul8ttySx"><!--pnid:NBLVArXtNIN5v8NDM7Enuy-->Photography &amp; Visual Merchandising</h3>
+            <p data-page-node-id="uJB3W3C2Tc0WSKsYiyb3vf"><!--pnid:QrTvCfuJIJ3e678WJDA0U4-->Image-making and retail environments that give products a point of view — not just a place on a shelf.</p>
+            <ul data-page-node-id="C1yVc26rpEpdKzevSQQm7H" class="tags">
+              <li data-page-node-id="0q5Rnp80owDKIhtBJXqhiU"><!--pnid:Pse9tHoKYJztKG1BQYwkHm-->Studio Photography</li><li data-page-node-id="ONuTjUHYMYx9gRA5TJjFZp"><!--pnid:ndCdY0AqUlNFd1bomyivi2-->Retail Space</li><li data-page-node-id="LO1FKut7qmvC5QA5r8gUe9"><!--pnid:F4eUSXnL1Pd6q04jFGM8VE-->VM Strategy</li><li data-page-node-id="ejaAgHlnjWCAgkpPLxW8JX"><!--pnid:DBT2kv7ArgLizsJCutwHqr-->Styling</li>
             </ul>
           </div>
-          <div class="image-slot"><span>Image slot 04</span></div>
+          <div data-page-node-id="pWBXS7TG3wVowHtfUBMSnt" class="image-slot"><span data-page-node-id="kO52vOK7AN9NwEgvSMyQsb"><!--pnid:VRhguPRihIEoPodyQuzUV2-->Image slot 04</span></div>
         </article>
 
-        <article class="service-row">
-          <div class="service-info">
-            <span class="service-index">05/</span>
-            <h3>Team Leadership &amp; Operations</h3>
-            <p>Recruiting, training and streamlining creative teams so the work gets better while the process gets lighter.</p>
-            <ul class="tags">
-              <li>Talent Management</li><li>Workflow Design</li><li>Data Analysis</li><li>Stakeholder Comms</li>
+        <article data-page-node-id="FdTkZkBDhHzlX9RCy9nSiV" class="service-row">
+          <div data-page-node-id="GLENiqY8NGPdFZZoUe2h8m" class="service-info">
+            <span data-page-node-id="wJJiaJGl2CfWqD311iLTd7" class="service-index"><!--pnid:ALJPe3CQp0JSDHMtGKSEVE-->05/</span>
+            <h3 data-page-node-id="96iayOagyxHQrHksOrL1RJ"><!--pnid:Laqom5QRuVax3qYv3tBOop-->Team Leadership &amp; Operations</h3>
+            <p data-page-node-id="5pLfoLoKT7gf7dSVlKmz1u"><!--pnid:1DSnD8II6S773LkkzIHFQV-->Recruiting, training and streamlining creative teams so the work gets better while the process gets lighter.</p>
+            <ul data-page-node-id="pB0glCS2twOqzK7kYRlmft" class="tags">
+              <li data-page-node-id="JEcdKVtcji9XgMvyuoCiQ5"><!--pnid:LUGAq8svvapXmztpXAGQe8-->Talent Management</li><li data-page-node-id="3HrGXY6bWwTA06V9jlo18t"><!--pnid:8BQFaykQZrp8oFJ2Ma0LdM-->Workflow Design</li><li data-page-node-id="T4F1aRI1bTlcRIYsMiEByl"><!--pnid:H7G3aFOigHLzpd3bDjvWil-->Data Analysis</li><li data-page-node-id="KUDcnP1d34DOgOjNRLEuJI"><!--pnid:LadJzIb86ztrcA9C2NyQ3n-->Stakeholder Comms</li>
             </ul>
           </div>
-          <div class="image-slot image-slot--mid"><span>Image slot 05</span></div>
-        </article>
-      </div>
-    </section>
-
-    <!-- SELECTED WORK -->
-    <section class="section section--work reveal" id="work">
-      <div class="section-head section-head--split">
-        <span class="section-label"><i class="tri" aria-hidden="true"></i> Selected work</span>
-        <p class="section-note">Portfolio imagery goes here — simply replace each image slot with your own visuals.</p>
-      </div>
-
-      <div class="work-grid">
-        <article class="work-card">
-          <!-- Replace .image-slot with: <img src="assets/work-01.jpg" alt="Vita by Carrefour project"> -->
-          <div class="image-slot image-slot--dark"><span>Work image 01</span></div>
-          <div class="work-meta">
-            <span class="work-no">01</span>
-            <div><h3>Vita by Carrefour</h3><p>B2B pitch system · Retail</p></div>
-            <span class="work-arrow" aria-hidden="true">↗</span>
-          </div>
-        </article>
-
-        <article class="work-card">
-          <div class="image-slot"><span>Work image 02</span></div>
-          <div class="work-meta">
-            <span class="work-no">02</span>
-            <div><h3>100+ Products / Year</h3><p>Homeware collection development</p></div>
-            <span class="work-arrow" aria-hidden="true">↗</span>
-          </div>
-        </article>
-
-        <article class="work-card">
-          <div class="image-slot image-slot--acid"><span>Work image 03</span></div>
-          <div class="work-meta">
-            <span class="work-no">03</span>
-            <div><h3>Global Campaigns</h3><p>ATL / BTL · APAC, EU, US, India</p></div>
-            <span class="work-arrow" aria-hidden="true">↗</span>
-          </div>
-        </article>
-
-        <article class="work-card">
-          <div class="image-slot image-slot--mid"><span>Work image 04</span></div>
-          <div class="work-meta">
-            <span class="work-no">04</span>
-            <div><h3>Workflow Reset</h3><p>Process design · Operations</p></div>
-            <span class="work-arrow" aria-hidden="true">↗</span>
-          </div>
-        </article>
-
-        <article class="work-card">
-          <div class="image-slot"><span>Work image 05</span></div>
-          <div class="work-meta">
-            <span class="work-no">05</span>
-            <div><h3>AngelHa Ceramics</h3><p>Founder project · UK</p></div>
-            <span class="work-arrow" aria-hidden="true">↗</span>
-          </div>
-        </article>
-
-        <article class="work-card">
-          <div class="image-slot image-slot--dark"><span>Work image 06</span></div>
-          <div class="work-meta">
-            <span class="work-no">06</span>
-            <div><h3>Queen's English</h3><p>Brand &amp; learning materials · HK</p></div>
-            <span class="work-arrow" aria-hidden="true">↗</span>
-          </div>
+          <div data-page-node-id="uA9CPhSpXBlV5rzkuMUZbh" class="image-slot image-slot--mid"><span data-page-node-id="8IDgQFyA4wYstQEGTJEtFu"><!--pnid:OgPbt2JuoyKaq69s1cZkXg-->Image slot 05</span></div>
         </article>
       </div>
     </section>
 
-    <!-- IMPACT -->
-    <section class="impact reveal" id="impact">
-      <div class="section-head">
-        <span class="section-label"><i class="tri" aria-hidden="true"></i> Impact, in numbers</span>
+    <!--pnid:9oAOilmmD1vwz6htmuBaQJ--><!-- SELECTED WORK -->
+    <section data-page-node-id="zUydXD74T3l5afU5r9p8GC" class="section section--work reveal" id="work">
+      <div data-page-node-id="1n04TZLcoV0tkxyKNlpTgq" class="section-head section-head--split">
+        <span data-page-node-id="X16b6AAYo4HOH5xPWQXMRS" class="section-label"><i data-page-node-id="UEUnXn7rODQFhYT6Pe2llG" aria-hidden="true" class="tri"></i><!--pnid:MwrRnGjfMqkilBPckb4Mnh--> Selected work</span>
+        <p data-page-node-id="GUy8HGi4b3BiB39oEXCHp9" class="section-note"><!--pnid:JCrYoe025UxCuug1BtY1Ln-->Portfolio imagery goes here — simply replace each image slot with your own visuals.</p>
       </div>
 
-      <div class="stats">
-        <div class="stat"><p>15+</p><span>Designers &amp; creatives led</span></div>
-        <div class="stat"><p>100+</p><span>New products delivered each year</span></div>
-        <div class="stat"><p>80%</p><span>Less process time after workflow redesign</span></div>
-        <div class="stat"><p>10+</p><span>Campaigns supported annually worldwide</span></div>
-      </div>
-    </section>
-
-    <!-- JOURNEY -->
-    <section class="section reveal" id="journey">
-      <div class="section-head">
-        <span class="section-label"><i class="tri" aria-hidden="true"></i> Journey</span>
-      </div>
-
-      <div class="timeline">
-        <article class="timeline-item">
-          <span class="timeline-date">2015 — Present</span>
-          <div>
-            <h3>Assistant Marketing Design Manager</h3>
-            <p class="timeline-org">Bergner (HK) Ltd · Hong Kong / China</p>
-            <ul>
-              <li>Led a team of 15+ product designers, photographers and project managers across 10+ offices.</li>
-              <li>Translated market intelligence into 100+ new products a year and supported 10+ campaigns across APAC, Europe, India and the USA.</li>
-              <li>Restructured the design workflow: process time down 80%, output up 50%.</li>
-            </ul>
+      <div data-page-node-id="T6B9AMiYk2gFLjGdi8dGn7" class="work-grid">
+        <article data-page-node-id="2yGMciyRiH02gyt33uSt9K" class="work-card">
+          <!--pnid:TyflezVkmqVRZxuT4mVHJP--><!-- Replace .image-slot with: <img src="assets/work-01.jpg" alt="Vita by Carrefour project"> -->
+          <div data-page-node-id="Nyfi0YOgIQde01po77pSZl" class="image-slot image-slot--dark"><span data-page-node-id="YMA1P2g4SsYVjviwjOpcbB"><!--pnid:WUq6TsHHRNF3k1WhV4jNV0-->Work image 01</span></div>
+          <div data-page-node-id="xsDzj69Q2RQGnyms6vpaWR" class="work-meta">
+            <span data-page-node-id="Hjq8TY3jrNGab7V1C4gEj4" class="work-no"><!--pnid:qwBTSVR4HH3938ASKlpZM9-->01</span>
+            <div data-page-node-id="AFt16YQGS6E1Pz8D0tmNla"><h3 data-page-node-id="LRZ2pm2kEEobfHvcGbXWbg"><!--pnid:Uxr0vp3yiB6cSnLaU9jpAa-->Vita by Carrefour</h3><p data-page-node-id="NhjDFdtTpBmPoOkOj29IAP"><!--pnid:z9o32LxsROjsKDLmPeAAJe-->B2B pitch system · Retail</p></div>
+            <span data-page-node-id="2vpoCzDHjXm5guo0g8gT9B" aria-hidden="true" class="work-arrow"><!--pnid:sDD4jPuszOYMnUMq7p9lCw-->↗</span>
           </div>
         </article>
 
-        <article class="timeline-item">
-          <span class="timeline-date">2010 — 2015</span>
-          <div>
-            <h3>Product Designer</h3>
-            <p class="timeline-org">Bergner (HK) Ltd · Hong Kong / China</p>
-            <ul>
-              <li>Developed homeware products and packaging for a 10,000+ SKU portfolio and 30+ house brands.</li>
-              <li>Worked with global partners including Carrefour, Walmart, Costco and Alessi.</li>
-            </ul>
+        <article data-page-node-id="8HBeA9ikw47f0AW5MAXhtv" class="work-card">
+          <div data-page-node-id="6Rujdgv6lyOxwNSgdjQhzN" class="image-slot"><span data-page-node-id="cTnzU6kRUwJ3Te6SGjPW5H"><!--pnid:tCKGcp7ZCKN1GcVU6xOOSM-->Work image 02</span></div>
+          <div data-page-node-id="E40zXqL6aUDinqS2TBjhlZ" class="work-meta">
+            <span data-page-node-id="xROonvY974ZSbA9SjP5rS2" class="work-no"><!--pnid:s4CCjhtZXVAbzrOfvIs8Zz-->02</span>
+            <div data-page-node-id="Zg9XWGcMHB8fxYoRs3eRoN"><h3 data-page-node-id="SgCN9nroBzOnVj2f43ecmH"><!--pnid:XtrGVBllwVaoHjZcMZpEX6-->100+ Products / Year</h3><p data-page-node-id="TMLl8rPZuyq70uJDhRue2x"><!--pnid:IWR4rzSOqvXmNlyRPXQvo8-->Homeware collection development</p></div>
+            <span data-page-node-id="ERIP09wKU307rYwg2umRJk" aria-hidden="true" class="work-arrow"><!--pnid:BJmbjikniRZw8yY2f8IhBY-->↗</span>
           </div>
         </article>
 
-        <article class="timeline-item">
-          <span class="timeline-date">Freelance</span>
-          <div>
-            <h3>Founder, tutor &amp; multidisciplinary designer</h3>
-            <p class="timeline-org">UK · Hong Kong · Austria · Germany · China</p>
-            <ul>
-              <li>Founded AngelHa Ceramics and taught 300+ students at Queen's English Learning Centre in Hong Kong.</li>
-              <li>Project work with GEA GmbH, GAP Ltd, Yong Feng Yuan, Tagnum.co.ltd and SDI Media.</li>
-            </ul>
+        <article data-page-node-id="C9HeymrnyYjCvh69HZmPCI" class="work-card">
+          <div data-page-node-id="RzvWLZqHCP7YdQ9sQH3W1d" class="image-slot image-slot--acid"><span data-page-node-id="TXXrgj9tQYdny6Y2Cvm4gw"><!--pnid:5s1ltFnDq4VwLxWYa1CTPy-->Work image 03</span></div>
+          <div data-page-node-id="qgO3ZKTOjbg8lFuCnxlMK7" class="work-meta">
+            <span data-page-node-id="LO07xQoh6Q39JFfvl0fdOH" class="work-no"><!--pnid:DYA0lE2dXfuKxipxAdvCfk-->03</span>
+            <div data-page-node-id="oxDpnjxtwRHjdoodyjzwvw"><h3 data-page-node-id="FXTJjEZu26cHJpcPsHMpv3"><!--pnid:NCkHRtTgxJDhgoMr4017F3-->Global Campaigns</h3><p data-page-node-id="rdRFBxudACuSESusvNfgEx"><!--pnid:FfYFQZlEzp1g6YRVR4KilJ-->ATL / BTL · APAC, EU, US, India</p></div>
+            <span data-page-node-id="q2RRZjHSugO6fzh2VwYI6f" aria-hidden="true" class="work-arrow"><!--pnid:tpzGfqnxrjTBMU5K3htYRF-->↗</span>
           </div>
         </article>
 
-        <article class="timeline-item">
-          <span class="timeline-date">Earlier</span>
-          <div>
-            <h3>Product &amp; Graphics Designer</h3>
-            <p class="timeline-org">Fly for Design Co. Ltd · Germany</p>
-            <ul>
-              <li>Led 5+ industrial projects from concept and 3D CAD through prototyping and mass production.</li>
-              <li>Bridged European licensors and Chinese manufacturers, and created ATL/BTL materials for trade fairs and e-shops.</li>
-            </ul>
+        <article data-page-node-id="O4S6rxkdjmXzj4HkLcxxVl" class="work-card">
+          <div data-page-node-id="u3lNJp8mnktnSAOh2IQ7oF" class="image-slot image-slot--mid"><span data-page-node-id="qJMWIc5iPyqmLmHoTqibm8"><!--pnid:ZkEOZd3rJsIEpun87YNjkO-->Work image 04</span></div>
+          <div data-page-node-id="Muw5JoFwyN7krh0rXXBqgo" class="work-meta">
+            <span data-page-node-id="FnjuGIr6Z4p17wmSPJADJL" class="work-no"><!--pnid:Klooi6yZ8RIpU9hYVKSKGN-->04</span>
+            <div data-page-node-id="5Z114JZ7eAbIrNQQOijEp4"><h3 data-page-node-id="ZAZ2ccYbISFPcn8HKMBSHh"><!--pnid:j4noMdr0XOnwunfWGETbSU-->Workflow Reset</h3><p data-page-node-id="lJNDQe82llDn8utFXXwD8P"><!--pnid:kAlyzGI6MeWyFFYgOSigKE-->Process design · Operations</p></div>
+            <span data-page-node-id="j14rIGVQMTmIO291cHu7qI" aria-hidden="true" class="work-arrow"><!--pnid:osAYxTTXy2gI6bxEWGYlam-->↗</span>
+          </div>
+        </article>
+
+        <article data-page-node-id="E6tKVI3pH8pw9g7sagvdWk" class="work-card">
+          <div data-page-node-id="vA9ECxlvHA9GqX7UyzRTY4" class="image-slot"><span data-page-node-id="2iRLdGzOTX11wEOTePufoX"><!--pnid:C4SQJJ8buhH91JZjKMsamB-->Work image 05</span></div>
+          <div data-page-node-id="HNEqG9DS5rcmFBwfqZsqoM" class="work-meta">
+            <span data-page-node-id="g2MpahGc7m6ecFa3Ut05ze" class="work-no"><!--pnid:iLFGzJEDu6mjQ42IROpaQ6-->05</span>
+            <div data-page-node-id="5DnnClXuNdlghbsqIZEBiA"><h3 data-page-node-id="TZTtn6xmi2UVThtY8DsgkA"><!--pnid:6FZvTrPY923WRO8pmuBYur-->AngelHa Ceramics</h3><p data-page-node-id="8HjsqZSBWMC3fvNnZMvUWQ"><!--pnid:FIJNwfisgjRxhaacyfqHmI-->Founder project · UK</p></div>
+            <span data-page-node-id="8GfIvVDQjhKpvwbj8tdFyy" aria-hidden="true" class="work-arrow"><!--pnid:QoYkaPP63RJeXE4koGTlI8-->↗</span>
+          </div>
+        </article>
+
+        <article data-page-node-id="TjvuAK9Y6AkUk6btib6h7p" class="work-card">
+          <div data-page-node-id="nlxdBZzgG1T8HFGGzQKILj" class="image-slot image-slot--dark"><span data-page-node-id="x0h8JyYaBW9IFKZDrLjxsZ"><!--pnid:dMipxB15ShfOxX31doHFxA-->Work image 06</span></div>
+          <div data-page-node-id="3dQFriH5YgtXFiDWREol2H" class="work-meta">
+            <span data-page-node-id="tdBjiJ0GMAQyK6IpYA9TM8" class="work-no"><!--pnid:mWhwpUGPgwJXFFavsqLWEb-->06</span>
+            <div data-page-node-id="OF9iDkzhNszaMSAVVn6h5x"><h3 data-page-node-id="dHPxFfngjX0VGNMnkp1ZpV"><!--pnid:kCO8cEv0zmtDEieXsbeLU4-->Queen&#39;s English</h3><p data-page-node-id="WjCrnvsdMv8EmBrH931AW9"><!--pnid:NF6mR7xKP5yp1vqD4hDXi2-->Brand &amp; learning materials · HK</p></div>
+            <span data-page-node-id="dbnYK6S5auLF9ib93UtB5H" aria-hidden="true" class="work-arrow"><!--pnid:3vORrAxIEAoMSbxyZ5bDC7-->↗</span>
           </div>
         </article>
       </div>
     </section>
 
-    <!-- TOOLKIT -->
-    <section class="section section--tools reveal" id="tools">
-      <div class="section-head">
-        <span class="section-label"><i class="tri" aria-hidden="true"></i> Toolkit &amp; background</span>
+    <!--pnid:7knCGw2HKlutyI6XFc8B4F--><!-- IMPACT -->
+    <section data-page-node-id="OsoJMLVf9rC0Ph6NkYzCWK" class="impact reveal" id="impact">
+      <div data-page-node-id="jyJEYaHjBWwhk5jvMPvkJx" class="section-head">
+        <span data-page-node-id="OWbEBZTr7mGF86WTnL2wid" class="section-label"><i data-page-node-id="IcuAE6YSaqUgOtbBHfPCpX" aria-hidden="true" class="tri"></i><!--pnid:97OIPgjV1oB1Wnj2eHSbsz--> Impact, in numbers</span>
       </div>
 
-      <div class="tools-grid">
-        <div>
-          <h3>Design &amp; production</h3>
-          <p>Adobe Creative Suite — Illustrator, InDesign, Photoshop, Dimension, XD, Premiere Pro. Rhino 3D, 3ds Max, Pro/ENGINEER, Microsoft Office.</p>
+      <div data-page-node-id="h38Oh7EYzhhLOBcHi2b8q7" class="stats">
+        <div data-page-node-id="EqrXPoAQhEMSIBgGNbT1Cz" class="stat"><p data-page-node-id="LuFPJPxRGi6MWXIQqvqfkN"><!--pnid:WbZAHMvjVhdAN304bhlWHY-->15+</p><span data-page-node-id="UtkeVAuwgllQmbDQkoY4c7"><!--pnid:JH9f8xjkm25JIF8mIIkueS-->Designers &amp; creatives led</span></div>
+        <div data-page-node-id="c5giPV8aqawYL915dkAmom" class="stat"><p data-page-node-id="rANr57RQ3x0eh38VfkQZND"><!--pnid:QFG5hhBuryZfbwzdMlQ2p5-->100+</p><span data-page-node-id="FLIkfSFM3nRPvKAavkTisa"><!--pnid:sULdPHia10dQl69MFJPX3Q-->New products delivered each year</span></div>
+        <div data-page-node-id="DO4Di5wIJkGDAtiVgwDffJ" class="stat"><p data-page-node-id="qw7IYg5arRMhusxINloKjH"><!--pnid:lOLwSp45oKEUJZwyeczWGH-->80%</p><span data-page-node-id="93JJLGeYm6QNcgxf0kCo1z"><!--pnid:d81qcWkx26pyaZFOuaFKD4-->Less process time after workflow redesign</span></div>
+        <div data-page-node-id="aw0SDmq82hIu5j3Ub2Na1G" class="stat"><p data-page-node-id="jQPriwWhpix6wDvEFf9vyc"><!--pnid:6BYg1B0Dj1TLURGQWrJrgC-->10+</p><span data-page-node-id="RMqG4uhCUqrFhA3vaUZAWD"><!--pnid:WmvfWw8IdKzMUKXyGtUyoL-->Campaigns supported annually worldwide</span></div>
+      </div>
+    </section>
+
+    <!--pnid:td5vpXwRsPKUuQ7koMoVLD--><!-- JOURNEY -->
+    <section data-page-node-id="FtOSSFLouDuapmVn7jokdy" class="section reveal" id="journey">
+      <div data-page-node-id="rYcNtvhQCRck65lzVghQ3d" class="section-head">
+        <span data-page-node-id="6g6OgD9BtDh4OPETvmJZ3w" class="section-label"><i data-page-node-id="RtyB5H7jcPUfK1ud99sZSl" aria-hidden="true" class="tri"></i><!--pnid:qSJDzlosEAReCOwzvrzCzR--> Journey</span>
+      </div>
+
+      <div data-page-node-id="EShgBX7nRJ9CZlt1frELBM" class="timeline">
+        <article data-page-node-id="AM1gURPY7J2NTRVzXudirh" class="timeline-item">
+          <span data-page-node-id="HzCZ9Z0RWa1EACrLYdXgwG" class="timeline-date"><!--pnid:lwn48v8zEpTl4YHIR1CsGQ-->2015 — Present</span>
+          <div data-page-node-id="iDV86uKaeAcOsP4CyUJh6B">
+            <h3 data-page-node-id="jlEV9A7cuKEEhHUblBDGiw"><!--pnid:N3zlPJ6Dqfh0tIepSdm5Fr-->Assistant Marketing Design Manager</h3>
+            <p data-page-node-id="9linBJ3FE3iv7dXzbFAupw" class="timeline-org"><!--pnid:HHAiTbGTL0o9Y1mIbehTqk-->Bergner (HK) Ltd · Hong Kong / China</p>
+            <ul data-page-node-id="MziF5kgJ6QjiLGD8FquePq">
+              <li data-page-node-id="EQB8krn3KsG5ZMtXUCKAaW"><!--pnid:L3Sj3Y9oOxDhHij65IORLi-->Led a team of 15+ product designers, photographers and project managers across 10+ offices.</li>
+              <li data-page-node-id="8G4wsFb9Lhia1IuS4YLfe9"><!--pnid:THZKcEm8xxBDmZxI6HE3Al-->Translated market intelligence into 100+ new products a year and supported 10+ campaigns across APAC, Europe, India and the USA.</li>
+              <li data-page-node-id="E3MoAn8jwMCI0I5XlvGI0o"><!--pnid:uYOeGZRNBbeuicZL62yOjI-->Restructured the design workflow: process time down 80%, output up 50%.</li>
+            </ul>
+          </div>
+        </article>
+
+        <article data-page-node-id="HyRwQmNmSzUTOws7SPXVlU" class="timeline-item">
+          <span data-page-node-id="W6W6aP34g5SvHuEuvJiBnJ" class="timeline-date"><!--pnid:vFMvWLYgI6PzL3k5npVUPu-->2010 — 2015</span>
+          <div data-page-node-id="DspGUqmXm7yNuI5PfQMdiu">
+            <h3 data-page-node-id="e4edj3KQcu4DYynxrg86Gj"><!--pnid:QZVlgleLnqySLJwe3Owklt-->Product Designer</h3>
+            <p data-page-node-id="BXxxUVnqddG2SGAWdPaLnx" class="timeline-org"><!--pnid:wQRzBGTZ2eRG2rgntbG0NV-->Bergner (HK) Ltd · Hong Kong / China</p>
+            <ul data-page-node-id="VSv2wNedtFwl20N3aDxvEq">
+              <li data-page-node-id="vRTmliFuycygMIsMIMMdWF"><!--pnid:6yS7b1At0PeXjN89ujqF0b-->Developed homeware products and packaging for a 10,000+ SKU portfolio and 30+ house brands.</li>
+              <li data-page-node-id="61rSvrJBEY2BmVoidhVK29"><!--pnid:3wcMLS7WqD4ibk2DAlBnoG-->Worked with global partners including Carrefour, Walmart, Costco and Alessi.</li>
+            </ul>
+          </div>
+        </article>
+
+        <article data-page-node-id="70EPBZ1Pq8acZaaUNznlyD" class="timeline-item">
+          <span data-page-node-id="QHeo2zoirUPSUqI7KDin0v" class="timeline-date"><!--pnid:yB49dQ3nOJfaVUf2KcAcMt-->Freelance</span>
+          <div data-page-node-id="6TwWGvqO0Ko5CvOyycDXXj">
+            <h3 data-page-node-id="Ot8oXoVl5c8N2qcChUU8fF"><!--pnid:riFqf2JITJFbgZPcg5ohgJ-->Founder, tutor &amp; multidisciplinary designer</h3>
+            <p data-page-node-id="kXXiuYvHqZJK1fI8mdDveD" class="timeline-org"><!--pnid:aV5kXo8jpBBHCD1AiTbTmC-->UK · Hong Kong · Austria · Germany · China</p>
+            <ul data-page-node-id="TXwEqPvK6MQbZsc5IAHwXh">
+              <li data-page-node-id="DlEeXZ9U9hTNyFQORSI9tB"><!--pnid:c4oAhNXJUUUFBQWHyii2FJ-->Founded AngelHa Ceramics and taught 300+ students at Queen&#39;s English Learning Centre in Hong Kong.</li>
+              <li data-page-node-id="MaypBf3KRy6c1HphEFZQea"><!--pnid:h03qACfrS1e648QuEaPnHw-->Project work with GEA GmbH, GAP Ltd, Yong Feng Yuan, Tagnum.co.ltd and SDI Media.</li>
+            </ul>
+          </div>
+        </article>
+
+        <article data-page-node-id="lCJD0aUdYeg3P11xVONPhG" class="timeline-item">
+          <span data-page-node-id="b4J8BZVwsXUL06WxURBPEh" class="timeline-date"><!--pnid:BwV875kJx18xb051RmCwKT-->Earlier</span>
+          <div data-page-node-id="tHCfaL86vHGcjom8GqvDPs">
+            <h3 data-page-node-id="d8F6Tp84BCAoRdfz2Iib7V"><!--pnid:E10GnA6bCNHBBwJgVsZpGt-->Product &amp; Graphics Designer</h3>
+            <p data-page-node-id="zaOYRvEh6J4jV5RMwLcb0f" class="timeline-org"><!--pnid:6ubIq8Y0woItJPn5zm37Oh-->Fly for Design Co. Ltd · Germany</p>
+            <ul data-page-node-id="iybRdOi89g8jHJuVdVIIuc">
+              <li data-page-node-id="6ACDAx4uLOknOWUpEUrBzI"><!--pnid:I3hHPAYp3Bigv8S1JeIosO-->Led 5+ industrial projects from concept and 3D CAD through prototyping and mass production.</li>
+              <li data-page-node-id="rTd6VDUlQC7kHBBqaN05yy"><!--pnid:4YdOlHGdmyIOLOKJcp42zd-->Bridged European licensors and Chinese manufacturers, and created ATL/BTL materials for trade fairs and e-shops.</li>
+            </ul>
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <!--pnid:xtPHNURDo8OjBW8cBa8wOl--><!-- TOOLKIT -->
+    <section data-page-node-id="HFTK9AV2dKHC0kjlDCfuZp" class="section section--tools reveal" id="tools">
+      <div data-page-node-id="tQa7abjtxMnxhXCnEFYDBP" class="section-head">
+        <span data-page-node-id="VLytEdCagUxhryqsErOeFx" class="section-label"><i data-page-node-id="Ow3uwPS2TQXfZpXrxbYmAS" aria-hidden="true" class="tri"></i><!--pnid:UrA2OA67p0R9a6haNZ6fEE--> Toolkit &amp; background</span>
+      </div>
+
+      <div data-page-node-id="JqFmbqAmf6KH2t72Aj2Vck" class="tools-grid">
+        <div data-page-node-id="nhiZnWSSVLY3051YCOciX1">
+          <h3 data-page-node-id="IJQNQgXSi7LLEbeUJzar6s"><!--pnid:tKHha4ZsJYjS6QyGazXAvD-->Design &amp; production</h3>
+          <p data-page-node-id="iW4hce9IaCmV9qvkSUkCX3"><!--pnid:kfIGHtfqnL7L4vJrN6LAxI-->Adobe Creative Suite — Illustrator, InDesign, Photoshop, Dimension, XD, Premiere Pro. Rhino 3D, 3ds Max, Pro/ENGINEER, Microsoft Office.</p>
         </div>
-        <div>
-          <h3>Languages</h3>
-          <p>English — native. Cantonese and Mandarin — fluent. German — Zertifikat Deutsch B1. HK/EU driving licence.</p>
+        <div data-page-node-id="QHUG8RJtIk8R7n74VLtFpA">
+          <h3 data-page-node-id="hMvD19246yCC08rqBVMCdH"><!--pnid:Q0xkL1YXeRhsJ0aQJLdT9u-->Languages</h3>
+          <p data-page-node-id="p9YIKdnUaFq7vcqwIwVlgC"><!--pnid:DQE8Ut9dYMNj26hmTSJuFO-->English — native. Cantonese and Mandarin — fluent. German — Zertifikat Deutsch B1. HK/EU driving licence.</p>
         </div>
-        <div>
-          <h3>Education</h3>
-          <p>MA UI &amp; UX Design, 2022. BA Ceramic Design, 1st Class Honours — Central St. Martins, UAL, London. Professional Diploma in 3-D Animation.</p>
+        <div data-page-node-id="DYkL7qJis77ilkHlC3znfM">
+          <h3 data-page-node-id="uk0TBeDj0bxxBDi3PqU3Pd"><!--pnid:MAx4ZIy2Ytqx2lZXapVKhg-->Education</h3>
+          <p data-page-node-id="BrpdGloFuCiv5CpkCCu1GT"><!--pnid:JYH9AGxIurh2mwQc3slAau-->MA UI &amp; UX Design, 2022. BA Ceramic Design, 1st Class Honours — Central St. Martins, UAL, London. Professional Diploma in 3-D Animation.</p>
         </div>
       </div>
     </section>
 
-    <!-- CONTACT -->
-    <section class="contact reveal" id="contact">
-      <span class="section-label"><i class="tri" aria-hidden="true"></i> Contact</span>
-      <h2>Let's make something work.</h2>
-      <p>Open to design leadership, product and brand collaborations across Hong Kong, the UK and beyond.</p>
+    <!--pnid:6Zy2arQOuYXncgIqszJVVr--><!-- CONTACT -->
+    <section data-page-node-id="iuh3Ep0NzyrsWoqXXnaGah" class="contact reveal" id="contact">
+      <span data-page-node-id="HYIlc6Rp5umFXwOnCznJHB" class="section-label"><i data-page-node-id="j4zpZ9Q684PB8DSheWiUBB" aria-hidden="true" class="tri"></i><!--pnid:Vdqa13cqZ2aWCNRHEAEAfx--> Contact</span>
+      <h2 data-page-node-id="7cqfIAcvaQjM9H7bS1AJHv"><!--pnid:gxl8Ttld1tlEFZuKK1lWDx-->Let&#39;s make something work.</h2>
+      <p data-page-node-id="5p4vahF8nqjJYGBTYhKDi0"><!--pnid:FCZ7TslXFH2BIU070NDIsE-->Open to design leadership, product and brand collaborations across Hong Kong, the UK and beyond.</p>
 
-      <div class="contact-links">
-        <a href="mailto:aymha8@gmail.com">aymha8@gmail.com <span aria-hidden="true">↗</span></a>
-        <a href="tel:+85292480038">+852 9248 0038 <span aria-hidden="true">↗</span></a>
+      <div data-page-node-id="POkkFgdLpzUJIFV4NExjeQ" class="contact-links">
+        <a data-page-node-id="m6ZfOyydu5xRMFuCwAKSJI" href="mailto:aymha8@gmail.com"><!--pnid:QhB2dv5dpqVa2pgPaK8ws3-->aymha8@gmail.com <span data-page-node-id="wV2ZSyizjeNNnv9Ck3rsfj" aria-hidden="true"><!--pnid:5asI0wH1bsHXav1oOYIGxV-->↗</span></a>
+        <a data-page-node-id="3chzeEW9aLeE7OgH8efutY" href="tel:+85292480038"><!--pnid:UsCJdeLWAXVw4TgstrT51Q-->+852 9248 0038 <span data-page-node-id="A44OpfgxvcKeep3Cm5iBT6" aria-hidden="true"><!--pnid:z2NDAH5AGbDSYH8A8Q7Fj5-->↗</span></a>
       </div>
 
-      <a class="pill pill--dark" href="mailto:aymha8@gmail.com">Start a conversation <span aria-hidden="true">↗</span></a>
+      <a data-page-node-id="krHMZh8rsWEwN1uDLgpvV6" class="pill pill--dark" href="mailto:aymha8@gmail.com"><!--pnid:8L6oaF6ZJOaZ1wg4iVecCe-->Start a conversation <span data-page-node-id="kq0UaYMhD8DktwoV1q3u5d" aria-hidden="true"><!--pnid:U44V9SWMyDO2UhgxjuvkqM-->↗</span></a>
     </section>
 
   </main>
 
-  <footer>
-    <span>© <span id="year">2026</span> Angel Ha</span>
-    <span>Designed with care · Hong Kong</span>
+<div data-page-node-id="gkwbNHplI3v1mDqiQ3eJdT" aria-hidden="true" class="cv-overlay" hidden id="cv">
+  <div data-page-node-id="7brZAxSVuyIIShcSJfTdA0" class="cv-overlay__bar"><span data-page-node-id="G5z4cU4TXjl7EJFtA2bn3n"><!--pnid:KOABKikFj8i7ETBRBCZjjX-->CV / Angel Ha</span><button data-page-node-id="srBofc4qaJDgLARk0HClx6" aria-label="Close CV" data-cv-close type="button"><!--pnid:xmBnhvZQvbNBnGyj9mPnrt-->Close ✕</button></div>
+  <iframe data-page-node-id="bVGUOZyiD5WuEoXAKYnYwL" sandbox="allow-same-origin" src="cv.html" title="Angel Ha CV"></iframe>
+</div>
+
+  <footer data-page-node-id="acM9A2gpKPQo3yEHsKCRlH">
+    <span data-page-node-id="L9lQypwcD0fK969WwgBinS"><!--pnid:wCM7kWDLiDJAQVnTD8erQk-->© <span data-page-node-id="j2ncXtWz8YovGyNTJ6BgjF" id="year"><!--pnid:DSAlgvgOHefuJOMHcl2eDO-->2026</span><!--pnid:ehPDOQjm2cx249pdP0Hutj--> Angel Ha</span>
+    <span data-page-node-id="tzb9t4jsZYeonshGpfyp0I"><!--pnid:GLdzpHaSyMoFbHfX0ExqlN-->Designed with care · Hong Kong</span>
   </footer>
 
-  <script src="script.js"></script>
-</body>
-</html>
+  <script data-page-node-id="ObeYR5WMgGFtrRZsfi7Mnr" data-pnid-children="jo34SsyFPUzNSLjGMJoFQP">
+(function () {
+  'use strict';
+
+  var header = document.getElementById('site-header');
+  var toggle = document.getElementById('nav-toggle');
+  var nav = document.getElementById('site-nav');
+  var year = document.getElementById('year');
+  var revealItems = document.querySelectorAll('.reveal');
+
+  // Header border appears once the page is scrolled.
+  function updateHeader() {
+    header.classList.toggle('is-scrolled', window.scrollY > 8);
+  }
+
+  updateHeader();
+  window.addEventListener('scroll', updateHeader, { passive: true });
+
+  // Mobile navigation.
+  function setNav(open) {
+    nav.classList.toggle('is-open', open);
+    toggle.setAttribute('aria-expanded', String(open));
+    toggle.setAttribute('aria-label', open ? 'Close navigation' : 'Open navigation');
+  }
+
+  toggle.addEventListener('click', function () {
+    setNav(toggle.getAttribute('aria-expanded') !== 'true');
+  });
+
+  nav.querySelectorAll('a').forEach(function (link) {
+    link.addEventListener('click', function () { setNav(false); });
+  });
+
+  document.addEventListener('keydown', function (event) {
+    if (event.key === 'Escape') setNav(false);
+  });
+
+  // Scroll reveal.
+  if ('IntersectionObserver' in window) {
+    var observer = new IntersectionObserver(function (entries) {
+      entries.forEach(function (entry) {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('is-visible');
+          observer.unobserve(entry.target);
+        }
+      });
+    }, { threshold: 0.1, rootMargin: '0px 0px -40px 0px' });
+
+    revealItems.forEach(function (item) { observer.observe(item); });
+  } else {
+    revealItems.forEach(function (item) { item.classList.add('is-visible'); });
+  }
+
+  if (year) year.textContent = new Date().getFullYear();
+
+  // CV overlay
+  var cvOverlay = document.getElementById('cv');
+  function setCV(open) {
+    if (!cvOverlay) return;
+    cvOverlay.hidden = !open;
+    cvOverlay.setAttribute('aria-hidden', String(!open));
+    document.body.style.overflow = open ? 'hidden' : '';
+    if (open) { var btn = cvOverlay.querySelector('[data-cv-close]'); if (btn) btn.focus(); }
+  }
+  document.querySelectorAll('[data-cv-open]').forEach(function (link) {
+    link.addEventListener('click', function (event) { event.preventDefault(); setCV(true); });
+  });
+  var closeBtn = document.querySelector('[data-cv-close]');
+  if (closeBtn) closeBtn.addEventListener('click', function () { setCV(false); });
+  if (cvOverlay) cvOverlay.addEventListener('click', function (event) { if (event.target === cvOverlay) setCV(false); });
+
+})();
+
+</script>
+
+
+</body></html>
